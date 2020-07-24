@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button id ="active" class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:login' %}">Login</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1 style="text-align: center;">Taxes</h1>
+      <h2>What are taxes?</h2>
+      <p>Taxes are compulsory contributions from citizens to their governing state, providing it with the funding necessary to fund government spending and public expenditures. They are integral components of the social contract a society agrees to when deciding to form a democratic government, providing political institutions with the financial means to carry out their responsibilities. There are many different factors that affect the amount and types of taxes individual citizens have to pay to the state.</p>
+      <h2>Types of taxes</h2>
+      <ul style="list-style-type:disc">
+        <li><strong>Progressive - </strong> In this type of taxation, tax rates increase progressively as a taxpayer’s taxable income increases. It may also be referred to as a graduated income tax.</li>
+        <li><strong>Regressive - </strong> The opposite of progressive taxation, regressive tax rates decrease as taxable income increases.</li>
+        <li><strong>Proportional/flat - </strong> In this form of taxation, tax rates remain proportional to taxable income for each individual taxpayer.</li>
+      </ul>
+      <p style="text-align:center;">
+      <img src="{% static "images/taxes2.jpg" %}" style="width: 450px; height: 300px;">
+      </p>
+      <h2>Taxation in the United States</h2>
+      <p>Like many other countries, the U.S. has a complex taxation system divided at the federal, state, and local levels. There are many unique forms of taxation that all citizens are subject to, but they can be divided into three basic categories: income taxes, property taxes, and consumption taxes.</p>
+      <h2>Taxes on income</h2>
+      <ul style="list-style-type:disc">
+        <li><strong>Income tax -</strong> This progressive tax is levied by the federal government and by various states and municipalities on revenue and income earned by individuals and businesses. Characteristics of taxpayers and of their sources of income can affect these tax rates and oftentimes, they can be reduced with credits, deductions, and allowances.</li>
+        <li><strong>Payroll tax -</strong> Also known as FICA taxes, these are federal taxes on employers, collected as percentages of salaries, wages, and tips withheld from employees. They are paid to the International Revenue Service(IRS) to fund programs like Social Security, Medicare, and federal income. </li>
+        <li><strong>Self-employment tax -</strong> These are taxes imposed on citizens who are self-employed, similar to the income and payroll taxes that other citizens pay. </li>
+        <li><strong>Capital gains tax -</strong> These are taxes imposed on profits made from selling assets, such as stocks, bonds, or real estate. They are typically calculated as a percentage of the difference between an asset’s selling price and its original purchase price. </li>
+        <li><strong>Estate tax -</strong> This is the tax on the transfer of wealth and property of a deceased person and is also called an inheritance tax. However, these taxes only affect a tiny portion of the population, as the value of the properties being taxed must exceed a high threshold. </li>
+      </ul>
+      <h2>Taxes on property</h2>
+      <ul style="list-style-type:disc">
+        <li><strong>Property tax -</strong> Also known as real estate taxes, these are levied proportionally on the value of the personal property and real estate. </li>
+        <li><strong>Personal Property tax -</strong> Unlike property taxes, this tax is imposed on movable assets, such as vehicles, RVs, mobile homes, boats, etc. </li>
+      </ul>
+      <h2>Taxes on goods/services</h2>
+      <ul style="list-style-type:disc">
+        <li><strong>Sales tax -</strong> This is a tax paid for the sales of certain goods and services, and sellers are typically permitted to collect funds for it directly from customers when they make purchases. It is usually calculated as a percentage of the total purchase price.</li>
+        <li><strong>Excise tax -</strong> This is a tax that only applies to specific items and services, such as gasoline or highway usage. Unlike other sales taxes, excise taxes are calculated on a per-unit basis rather than as a percentage of the purchase price.</li>
+        <li><strong>User fees - </strong> This is a tax paid to gain access to certain services and facilities. Many public services and government-affiliated facilities require this tax.</li>
+        <li><strong>Sin tax - </strong> These are taxes on items such as alcohol and cigarettes.</li>
+        <li><strong>Luxury tax - </strong>  These are taxes on luxury items, such as expensive jewelry and cars.</li>
+      </ul>
+      <h2>Paying taxes</h2>
+        <p>If you fail to file or pay taxes, you will face penalties from the IRS which will worsen on a monthly basis as long as they remain unpaid. Falling behind on paying taxes can place you in a downward spiral, as the amount you owe will increase significantly over time. If you continually fail to pay, the IRS can penalize you in many ways,  such as filing a claim to or seizing your property, making you forfeit your tax refunds, charging you for tax evasion, or even revoking your passport. Although keeping up with all of these taxes can seem overwhelming, there are ways to make the process simpler. Firstly, being educated on the various types of taxes you are subject to, the amounts due, and their deadlines can help you manage your personal finance efficiently and organize your payments. Also, depending on your situation, you can seek out legal tax deductions and credits to reduce the amount of taxes you have to pay. By staying aware and planning for the future, you can stay on top of your taxes and ensure that you are paying no more than you need to. In the end, these taxes are only meant to benefit you and the public services and facilities in your community.</p>
+    </div>
+
+
+  </body>
+</html>

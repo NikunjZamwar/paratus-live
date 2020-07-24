@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button id ="active" class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:login' %}">Login</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1 style="text-align: center;">Credit Score</h1>
+      <h2>What Defines a Credit Score?</h2>
+      <p>A credit score is used by lenders as a measure of an individual’s creditworthiness. This means that lenders will use this value to estimate the likelihood of an individual paying back a loan. The FICO Score is the most widely used brand of credit score. With a range between 300-850, a credit score of 700 or above is typically considered good.</p>
+      <p style="text-align:center;">
+      <img src="{% static "images/creditscore.jpg" %}" style="width: 450px; height: 420px;">
+      </p>
+      <h2>What Factors Affect Credit Score?</h2>
+      <p>The factors that affect an individual’s credit score are information typically sourced by credit bureau’s regarding the individual’s credit history. Here are the primary factors that affect one’s FICO score:</p>
+      <ul style="list-style-type:disc">
+        <li><strong>Payment history</strong>, which refers to the timeliness and accuracy of payments,  accounts for 35% of the FICO score. This is the most important factor because it tells lenders if they will be paid back on time. If an individual consistently pays back loans and makes payments on time, it gives lenders assurance that they will not be losing money by giving this individual loans. However, if someone fails to make payments to the right amount on time, their credit score may fall, lowering the lender's trust in the individual to pay back the loan.</li>
+        <li><strong>Credit utilization</strong>, which measures the percentage of the amount of the total credit card balance one is using, accounts for 30% of the FICO score. It is measured as the amount of revolving credit you're currently using divided by the total amount of revolving credit you have available. This shows lenders how reliant you are on the loans. If one is heavily reliant on the loans, they will have a higher credit utilization ratio and be less likely to have the funds to pay back loans, thus lowering their credit score. Typically, a good credit utilization ratio is under 30%.</li>
+        <li><strong>Credit history length</strong>, which is the length that one has held credit accounts, accounts for 15% of the FICO score. The higher the credit history length, the higher the credit score. A longer credit history is important as more experienced individuals are more likely to pay back their loans. This is determined by the average age of one’s accounts, the date of creation of the newest account, and the oldest account.</li>
+        <li><strong>New credit</strong> determines 10% of one’s FICO score. New credit relates to the amount of recently created credit accounts along with the hard inquiries that one has. Hard inquiries are the amount of times that a lender has requested for the individual to present their credit files. A higher number of hard inquiries or recently created credit accounts could be detrimental to one’s credit score because it indicates increased risk to the lenders.</li>
+        <li><strong>Credit mix</strong> determines the final 10% of the FICO score. It is the measure of how well one can manage a diverse variety of credit uses. If an individual has credit accounts for various uses such as a car loan and student loan and a mortgage, it signifies to the lenders that the individual is capable of maintaining various credit accounts, thus increasing their reliability.</li>
+      </ul>
+      <h2>Why is Credit Score Important?</h2>
+      <p>Maintaining a high credit score is an essential part of young adults’ lives. As life progresses, you will be faced with important credit decisions that will impact your score for the better or worse. It is important to pay attention to these decisions because your credit score will play a major role on your ability to take loans from banks. Loans are an important part of young adults’ lives, as they will need them for education, property, transportation, and a variety of essential items. If one doesn’t have a high score, they may lose these loans and lose the corollary opportunities, such as education or housing. This is why it is important for teenagers and high school students to know about credit score to understand the role it plays and how they can keep it high.</p>
+    </div>
+
+
+  </body>
+</html>

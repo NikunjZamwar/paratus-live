@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button id ="active" class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:login' %}">Login</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1 style="text-align: center;">Retirement</h1>
+      <p>Retirement is a process that is the accumulation of efforts from a young age. That is why you can benefit the most when starting early and taking advantage of the options that a low starting income offers in the form of less capital gains. These capital gains basically are the percentage of your investment that is deducted to taxes and when starting an investment account early you can put money in post tax. Thus, you will save money as opposed to simply holding you cash in a bank account until you retire. Below are the numerous and detailed options that will allow you to have a  path towards financial stability in the future.</p>
+      <ul style="list-style-type:disc">
+        <li><strong>Defined Contribution Plans - </strong>401(k) and 403(b) plans are qualified tax-advantaged retirement plans offered by employers to their employees. 401(k) plans are offered by for-profit companies to eligible employees who contribute pre or post-tax money through payroll deduction. 403(b) plans are offered to employees of non-profit organizations and the government. 403(b) plans are exempt from nondiscrimination testing, whereas 401(k) plans are not.</li>
+        <li><strong>IRA - </strong>An IRA is an account set up at a financial institution that allows an individual to save for retirement with tax-free growth or on a tax-deferred basis. The 3 main types of IRAs each have different advantages: Traditional IRA involves contributions with money you may be able to deduct on your tax return, and any earnings can potentially grow tax-deferred until you withdraw them in retirement. Many retirees find themselves in a lower tax bracket than they were in pre-retirement, so the tax-deferral means the money may be taxed at a lower rate. Roth IRA is different as it involves contributions with money you've already paid taxes on (after-tax), and your money may potentially grow tax-free, with tax-free withdrawals in retirement, provided that certain conditions are met. Rollover IRA is when you contribute money "rolled over" from a qualified retirement plan into this traditional IRA. Rollovers involve moving eligible assets from an employer-sponsored plan, such as a 401(k) or 403(b), into an IRA.</li>
+        <li><strong>GIA - </strong>A guaranteed interest account (GIA) is an ideal account for saving toward a special purchase, creating an emergency fund, a guaranteed holding of your investment portfolio and even guarding against market volatility. Our GIAs provide security of principal with a guaranteed rate of return. GIAs are also tax-free savings account eligible.</li>
+        <li><strong>Profit-Sharing - </strong>A profit-sharing plan is a retirement plan that gives employees a share in the profits of a company. Under this type of plan, also known as a deferred profit-sharing plan (DPSP), an employee receives a percentage of a company's profits based on its quarterly or annual earnings.</li>
+        <li><strong>Pension - </strong>A pension plan is a retirement plan that requires an employer to make contributions to a pool of funds set aside for a worker's future benefit. The pool of funds is invested on the employee's behalf, and the earnings on the investments generate income to the worker upon retirement.</li>
+      </ul>
+      <p>These are all forms of retirement that are either independent or employee provided. Ultimately it is your goal to begin as early as possible with a retirement option as well as commit as much money as possible to your retirement accounts from your income. Growing a diversified portfolio as shown in the Investment section can greatly complement this financial stability.</p>
+    </div>
+
+
+  </body>
+</html>

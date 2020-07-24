@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button id ="active" class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:login' %}">Login</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1 style="text-align: center;">Investing in Stocks</h1>
+      <p>Investing of any kind requires you to assess your financial situation beforehand. Especially at a young age, evaluate the financial situation you are in. This involves your possible dependence on your parents and whether you are pursuing further education in college. After assessing whether you are able to put money into the market with possible and acceptable risk of loss, then only you can move forward.</p>
+      <h2>What are Stocks?</h2>
+      <p>Stocks are fundamentally a piece that represents a share of ownership in a company. Each publicly traded company has a stock.</p>
+      <p>There are important terms that need to be understood by young investors. For example, volume is the number of stocks available and market capitalization is the price of a stock multiplied by the volume. They are all interconnected and his explanation will show you how you can analyze the market to understand these pieces of the puzzle:</p>
+      <ul style="list-style-type:disc">
+        <li>If there's a higher volume of trading in a particular stock, that naturally means that investors are interested in buying or selling it. </li>
+        <li>If volume and price are on the rise, it means investors are betting the company will do well.</li>
+        <li>If volume is up but price is down, it means more investors are looking to sell.</li>
+      </ul>
+      <p style="text-align:center;">
+        <img src="{% static "images/stocksimage.jpg" %}" style="width: 600px; height: 400px;">
+      </p>
+      <h2>Getting Started</h2>
+      <p>Stocks fluctuate when a company has positive, negative or neutral associations. In the end, the stock price is based on public opinion of a company and its future as this ultimately determines how much of a stock is bought or sold. These can include all types of things such as their revenue reports and how much money they have made or any good news or bad news about the company. With the economy slowly growing at a steady rate, investing in stocks allows for a steady increase in your investment. Below is the method by which you can begin investing as a teen or at a young age:</p>
+      <ul style="list-style-type:decimal">
+        <li>Put money to the side that will be independent of investments. This will serve as a cash reserve equivalent to several months of living expenses and will help you be more practical in your decisions making after a sudden dive. </li>
+        <li>After getting your first job and earned income, you can create your Roth IRA which allows for post tax contributions to the account and no capital gains taxes when you withdraw the money. This is a form of retirement account that teenagers can easily take advantage of after they first earn an income.</li>
+        <li>Begin investing by a low-cost and commission online service. This can be an app that works on the phone as well as online and these services are specified and categorized in the How To Invest section. First begin by investing in exchange traded funds (ETF’s) which are basically stocks representing a large part of the market. They are made up of multiple different stocks such as the S&P 500 which contains 500 of the largest companies and is considered to be one of the best indicators of the US stock market. This makes the stock more reliable and liquid with less chance of fluctuation than individual stocks.</li>
+        <li>The next step is to use dollar cost averaging, which is the process of buying into your investment positions gradually, rather than all at once. This means every week you buy an SPY (S&P 500) stock which removes the chance of buying at the top of the market all at once and rather the cost is average which works in your favor for long term gains.</li>
+        <li>Get some investment education through researching beyond ETFs which will have been your basic choices before this point.</li>
+        <li>Begin to invest in individual stocks gradually and rather focus on researching the company thoroughly.</li>
+        <li>Diversify your portfolio with different sectors of stocks such as information technology, ETFs, services or manufacturers.</li>
+      </ul>
+      <p>Overall, if you are able to begin gradually and develop a thorough process of reasoning when making investments then you will be more likely to stay in it for the long run. Starting at a young age with early investment while following these guidelines will surely make the future more financially comfortable for you as many have experienced and emphasize now.</p>
+
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_6130a"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/CURRENCYCOM-US30/" rel="noopener" target="_blank"><span class="blue-text">US30 Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 980,
+        "height": 610,
+        "symbol": "CURRENCYCOM:US30",
+        "interval": "D",
+        "timezone": "exchange",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_6130a"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+      <br>
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+        <div id="tradingview_c9ef6"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/CURRENCYCOM-US500/" rel="noopener" target="_blank"><span class="blue-text">US500 Chart</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "width": 980,
+        "height": 610,
+        "symbol": "CURRENCYCOM:US500",
+        "interval": "D",
+        "timezone": "exchange",
+        "theme": "light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_c9ef6"
+      }
+        );
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+
+      <p style="text-align:center; font-size:11px;">
+        <iframe style="width: 780px; height: 495px;" src="https://www.youtube.com/embed/dFAiChOmoGI"></iframe>
+        <br>
+        Video courtesy of
+        <a href="https://www.youtube.com/watch?v=dFAiChOmoGI" target="_blank">Stock Market For Beginners 2020</a>.
+      </p>
+  </div>
+
+
+  </body>
+</html>

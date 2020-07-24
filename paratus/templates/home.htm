@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a class="active" href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="{% url 'main:forum' %}">Forum</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'main:logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'main:login' %}">Login</a>
+        {%endif%}
+      </div>
+    </div>
+
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container" id="homepgtrading">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        {
+          "proName": "FOREXCOM:SPXUSD",
+          "title": "S&P 500"
+        },
+        {
+          "proName": "FOREXCOM:NSXUSD",
+          "title": "Nasdaq 100"
+        },
+        {
+          "description": "AAPl",
+          "proName": "NASDAQ:AAPL"
+        },
+        {
+          "description": "FB",
+          "proName": "NASDAQ:FB"
+        },
+        {
+          "description": "MSFT",
+          "proName": "NASDAQ:MSFT"
+        },
+        {
+          "description": "BRK-B",
+          "proName": "NYSE:BRK.B"
+        },
+        {
+          "description": "JPM",
+          "proName": "NYSE:JPM"
+        },
+        {
+          "description": "XOM",
+          "proName": "NYSE:XOM"
+        },
+        {
+          "description": "BAC",
+          "proName": "NYSE:BAC"
+        },
+        {
+          "description": "GOOGL",
+          "proName": "NASDAQ:GOOGL"
+        },
+        {
+          "description": "AMZN",
+          "proName": "NASDAQ:AMZN"
+        },
+        {
+          "description": "VZ",
+          "proName": "NYSE:VZ"
+        }
+      ],
+      "colorTheme": "light",
+      "isTransparent": false,
+      "displayMode": "adaptive",
+      "locale": "en"
+    }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+    {% if request.user.is_authenticated %}
+    <h1 style="text-align: center;">Welcome, {{request.user.first_name}}!! </h1>
+    {%endif%}
+    <div class="homepg">
+      <p style="text-align:center;">
+        <img src="{% static "images/logo.png" %}" style="width: 400px;">
+      </p>
+      <div>
+        <!-- <img src="{% static "images/home.png" %}" style="width: 600px; height: 350px; float: left;"> -->
+        <h1 style="text-align: center;">The Financial Guide for Teens</h1>
+        {% if not request.user.is_authenticated %}
+        <p style="text-align:center;">
+          <button class="btn" onclick="window.location.href = '{% url 'main:signup' %}';">Register Now</button>
+        </p>
+        {%endif%}
+      </div>
+      <br style="clear: both"/>
+      <br>
+      <div id="mission">
+        <h2 style="text-align:center;">Our Mission</h2>
+        <p>
+        At Paratus, our goal is to educate America’s youth with essential financial knowledge that is currently not being taught in schools through a user-friendly interface.
+        Although a traditional education will teach students how to specialize in certain career fields and perform certain tasks, these students lack knowledge of a vital part of adulthood.
+        Consider that 84 percent of high school students desire more financial education; however, only 12 percent of high school classes currently teach forms of financial education according to a 2016 study from PricewaterhouseCoopers (PwC).
+        Paratus is the Latin term for prepared, and our priority here is to provide students with the needed information to be prepared for a lifetime of important financial decisions.
+        </p>
+      </div>
+      <br style="clear: both"/>
+      <div class="container2">
+        <h2 style="text-align:center;">Where To Invest</h2>
+        <p>
+        There are many different apps that allow you to invest on the go or online through a browser.
+        Each has its own benefits when you are just starting to invest at a young age and it is important to compare each option to figure out the best fit for you.
+        These are some of the best starter options in 2020:
+        </p>
+        <ul style="list-style-type:disc">
+          <li><strong>TD Ameritrade - </strong>Best variability between beginners and professionals</li>
+          <li><strong>Robinhood - </strong>Best for free trading with no extra costs</li>
+          <li><strong>Webull - </strong>Best for free commissions like Robinhood however it is less focused towards beginners</li>
+          <li><strong>Wealthbase - </strong>Best for social experience as it is user friendly with competitive games </li>
+          <li><strong>Invstr - </strong>Best for educating yourself on investing</li>
+        </ul>
+        <div style="text-align: center; margin-left: 8px;">
+          <button class="dot" onclick="href = https://www.tdameritrade.com/;">  <img src="{% static "images/ameritrade.png" %}" style="width: 150px;"></button>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  </body>
+</html>

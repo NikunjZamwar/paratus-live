@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Paratus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
+      <div class="navbar-right">
+        <a href="{% url 'main:home' %}">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn" onclick="window.location.href = '{% url 'main:basics' %}';">Basics
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="{% url 'main:taxes' %}">Taxes</a>
+            <a href="{% url 'main:credit' %}">Credit Score</a>
+            <a href="{% url 'main:retirement' %}">Retirement</a>
+            <a href="{% url 'main:student' %}">Student Finance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button id ="active" class="dropbtn" onclick="window.location.href = '{% url 'main:investment' %}';">Investment
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="investment">
+            <a href="{% url 'main:stocks' %}">Stocks</a>
+            <a href="{% url 'main:property' %}">Property</a>
+            <a href="{% url 'main:bonds' %}">Bonds</a>
+          </div>
+        </div>
+        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:login' %}">Login</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <h1 style="text-align: center;">Bonds</h1>
+      <h2>What are Bonds?</h2>
+      <p>Simply put, a bond is a loan from an investor to a borrower. It is considered to be much safer than stocks because the borrower pays the loan back with a fixed rate of interest on the income, thus lowering the risk of losing money. This is typically paid annually, and then at the end of the agreed upon time period (maturity date), the borrower must pay the face value of the bond back.The borrower is typically corporate or governmental and the investor can be an individual.The bond issuer is the borrower, while the bondholder is the investor.</p>
+      <h2>What Are the Primary Bond Types?</h2>
+      <ul style="list-style-type:disc">
+        <li><strong>Treasury Bonds - </strong>These are the bonds where the issuer is the U.S. Treasury. These bonds follow a very conventional way as they have a simple fixed-income rate. Although this is the safest option due to the issuer being the Treasury, they usually reap little profit. A major benefit is that the investor doesn’t have to pay the state income taxes on the interest.</li>
+        <li><strong>Other U.S. Government Bonds - </strong>They are similar to Treasury bonds; however, they are issued by different U.S. government agencies. Though the profit here can be far greater, the investor is required to pay the state income taxes on the interest.</li>
+        <li><strong>Corporate Bonds - </strong>Corporate bonds are issued from corporate companies rather than U.S. government agencies. As a result, the more risky companies allow for far greater profits. However, if the company doesn’t mature well over the time period, it could result in little profit. Convertible bonds are a type of corporate bonds in which the investor can convert the bond value to a predetermined number of shares in the company. Though this seemingly offers great benefits to the investors, it is worth mentioning that this type of bond usually has a lower interest rate.</li>
+        <li><strong>Municipal Bonds - </strong>These are issued by local government and municipalities. These are typically used by the issuers to fund local government projects, such as construction or educational plans. A great benefit is that municipal bonds do not charge taxes to the investor on a federal level, and if the investor is in the same state as the issuer, state income taxes are also removed. Consequently, municipalities must limit the available profit/yield to the investor in order to prevent an extreme loss of profit for themselves.</li>
+        <li><strong>Non-conventional Bonds - </strong>Unlike most bonds, the interest rates and maturity date may change throughout the investment. These bonds are very risky, as these changes may result in a limited profit or great profit. On top of this, investors are required to pay taxes on any returns, regardless of whether the plan involves an interest rate or not. These factors make it a risky option, but the profit could be great.</li>
+        <li><strong>Foreign Bonds - </strong>These bonds are typically issued by a foreign issuer, but in the currency and market of the domestic investor. These can increase the investor’s diversity and pose great profits. However, you must do your research before choosing this category because values of currencies are constantly fluctuating, and if you don’t pay attention to this beforehand, you could be losing potential profits.</li>
+      </ul>
+      <h2>Purchasing Bonds</h2>
+      <p>Purchasing bonds is an unexpectedly simple process. You can buy bonds through an online brokerage (which usually sell almost all types of bonds) and through the U.S. Treasury. Make sure to pay attention to the interest rate, maturity date, and try to estimate the potential profits. This will give you a good gage as to if you will make money and how risky it would be.</p>
+      <h2>Bonds vs Stocks</h2>
+      <p>Choosing between purchasing bonds and stocks depends on how much of a risk you are willing to take. Stocks are far more risky, but offer greater profits. Bonds are very reliable and safe, however have a limited opportunity for profit. Though, having both bonds and stocks in your portfolio is typically the more beneficial option, as you have a steady income from the bonds and can play it more riskier for greater profits with stocks.</p>
+    </div>
+
+
+
+  </body>
+</html>
