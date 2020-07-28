@@ -20,7 +20,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = ParatusPost
         fields = ('paratus_message',)
-        widgets = {'paratus_message': forms.Textarea(attrs={'rows':4, 'cols':15}), }
+        widgets = {'paratus_message': forms.Textarea(attrs={'rows':15, 'cols':188}), }
 
 class CommentForm(forms.ModelForm):
     class Meta:

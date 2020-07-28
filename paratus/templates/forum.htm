@@ -66,26 +66,24 @@
           <div class="content">
             <br>
             <div class="container">
-              <form action="" name="comment" method="POST">
+              <form action="{% url 'main:comment' id=post.id %}" name="comment" method="POST">
                 {% csrf_token %}
                 {{ cform.as_p }}
-                <button value={{post}} name="comment" class="loginbtn">Reply</button>
+                <button class="loginbtn">Reply</button>
               </form>
             </div>
             <br>
           </div>
-          <button type="button" class ="collapsible">Comments</button>
+          <button class ="collapsible">Comments</button>
           <div class="content">
             <br>
             <p>Comment</p>
           </div>
 
-        <script src="{% static "js/forum.js" %}"></script>
+          <script src="{% static "js/forum.js" %}"></script>
 
         </div>
         <br>
-
-
       {% endfor %}
 
   {% else %}

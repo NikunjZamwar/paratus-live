@@ -82,7 +82,7 @@ def logout_user(request):
     messages.info(request, "logged out")
     return redirect('main:home')
 
-def forum(request):
+def forum(request, id=None):
     print(request)
     if request.method == 'POST' and 'post' in request.POST:
         pform = forms.PostForm(request.POST)
@@ -92,12 +92,14 @@ def forum(request):
             post.save()
     elif request.method == 'POST' and 'comment' in request.POST:
         cform = forms.CommentForm(request.POST)
-        print(request.POST)
+        # print(request.POST)
         print(request.body)
         if cform.is_valid():
+            print("form is valid")
             comment = cform.save(commit=False)
             comment.paratus_user = request.user
-            comment.paratus_post = request.POST['data']
+            comment.paratus_post = ParatusPost.objects.get(id=id)
+            print(comment.paratus_post)
             comment.save()
     pform = forms.PostForm()
     cform = forms.CommentForm()
