@@ -34,14 +34,46 @@
             <a href="{% url 'main:bonds' %}">Bonds</a>
           </div>
         </div>
-        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:forum' %}">Forum</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'main:logout' %}">Logout</a>
+        {% else %}
         <a href="{% url 'main:login' %}">Login</a>
+        {%endif%}
       </div>
     </div>
 
-  <div class="info">
-    <h1 style="text-align: center;">Property</h1>
-  </div>
+    <div class="info">
+      <h1 style="text-align: center;">Property Investment</h1>
+      <p>Investing in property is one of the most effective ways to generate new revenue and to build wealth gradually. Also known as real estate investment, this form of investing applies to property purchased or rented with the sole purpose of making a profit. Much of the vacant land and residential lots you may see in your communities are often owned by real estate investors trying to build themselves up financially. Although this can be a very lucrative practice when done right, it can be difficult to understand and get started.</p>
+      <h2>How real estate investors make profit</h2>
+      <p>There are many different ways that investors are able to make money off of property and there are terms you need to know to understand the process.</p>
+      <ul style="list-style-type:disc">
+        <li><strong>Appreciation -</strong> This refers to the increase in the value of property due to external changes. Changes in the real estate market, such as an increased demand for property in the area due to increased population or the creation of a new attraction increasing traffic into the area, can cause property in that area to become more appealing to buyers, increasing its value. As a result, investors look to buy property that is likely to appreciate, allowing them to sell it for a profit in the future.</li>
+        <li><strong>Cash flow income -</strong> This is the income that a real estate investor brings in from operating an owned piece of property. For example, the owner of an apartment complex can bring in significant revenue from the rent fees of his or her tenants. Similarly, the owner of an office building can bring in cash flow from companies who want to operate in it, and the owner of a storage unit can generate income from customers who want to store their belongings in it.</li>
+        <li><strong>Real estate specialty -</strong> Another way to make an income off real estate is to become a specialist in the industry, who helps clients or companies in investing efficiently with their expertise. Specialists often charge these clients with the rights to a percentage of their earnings from the investment, and this job requires significant experience and credibility in the real estate market.</li>
+        <li><strong>Ancillary real estate income- </strong> This refers to the income that can be generated from the supplemental services that may be offered in a property, such as vending machines, dining services, or laundry facilities. Though it may seem to be less impactful, ancillary income can actually be a huge source of profit for real estate investors.</li>
+      </ul>
+      <p style="text-align:center;">
+      <img src="{% static "images/propertyinvestmentpic.jpg" %}" style="width: 600px; height: 400px;">
+      </p>
+      <h2>How to invest in real estate</h2>
+      <p>Now that you are familiar with some of the basic terminology regarding real estate investment, here is a general guide to getting started.</p>
+      <ul style="list-style-type:decimal">
+        <li><strong>Weigh the risks -</strong> Despite the high returns and potential associated with property investment, it does have certain aspects that can discourage many from pursuing it. Factors like the risks of unpredictability, significant time commitment, high starting costs, and the potential for a long wait before making any real profits are definitely some that you should consider before beginning.</li>
+        <li><strong>Create a team -</strong> The next step is to find a reliable and credible real estate agent that is familiar with the area you are looking to invest in. Usually, this real estate agent will connect you with other important people you need, such as a real estate attorney, an insurance agent, a home inspector, and more. It is important to ensure that your team members are trustworthy and work honestly, as you will have to pay them for their service, and much of your success in investing depends on their competence. </li>
+        <li><strong>Plan your investment -</strong> There are many different types of investments you can make varying by the type of the property you buy, its size, its price range, its maintenance level, its location and many other factors. Most types of property you can invest in have certain benefits and certain drawbacks that they may bring. For example, investing in a multi-family unit like an apartment complex may bring in much more cash flow, but a single-family home may appreciate more and require less maintenance and less initial investment. It is important to consult the trusted experts that you hire to make a more knowledgeable decision. By choosing the best type based on your financial situation and goals, you can maximize profits and face less problems. </li>
+        <li><strong>Secure financing -</strong> Now you need to figure out how you will be paying for the property. The simplest way is to just pay for it with cash, but this is not always a practical option, so there are other ways. There are many types of loans and mortgages you can utilize in financing real estate, and some of them are explained below:</li>
+          <ul style="list-style-type:disc">
+            <li><strong>Conventional Mortgages -</strong> This is a type of loan you can take from a bank to help pay for real estate. However, you must qualify to receive it. To assess qualification, lenders may look at income, the type of property being purchased, credit score, previous debt, and employment status. Thus, it is important to keep a strong financial record and if you do meet the personal qualifications, you can seek a conventional mortgage to secure financing.</li>
+            <li><strong>Asset-based loans-</strong> This is another type of loan you can take out, but the difference is that lenders will only consider the type of property being purchased and your credit score. Personal qualifications play less of a role here, while the status of the actual property holds much more importance. This is a better option if you have a poor financial record.</li>
+          </ul>
+        <li><strong>Buying the property - </strong> It’s finally time to purchase your real estate property. However, you need to understand how to calculate cash flow first. Consult with your advisors and understand the potential expenses and income streams you will deal with after buying a property. If your investment isn’t bringing in a net profit, or a positive cash flow, then there is no reason to invest. Additionally, you need to decide whether or not you want to hire a professional property manager for your investment or if you want to learn to become its landlord yourself. Although hiring one can be expensive, learning to be an effective landlord can also be difficult. After this, you can choose a property. It is important to work with your team to make smarter decisions, to analyze the projected outcome of the investment in the long term, and to look at properties through the eyes of an investor, not a homeowner. Lastly, make an offer for your carefully selected property and work with your real estate manager to negotiate a final price.</li>
+      </ul>
+      <p>With experience, you will get a better understanding of the art of real estate investment, and you will be able to make better decisions naturally. Investing in real estate is an extremely lucrative practice utilized by successful people today. In recent years, the market has become even more profitable, only increasing the benefits of learning this form of investment.</p>
+      <hr>
+      <p style="font-size:12px;"><Strong>Sources</strong><br>https://www.fool.com/millionacres/real-estate-investing/rental-properties/buying-your-first-investment-property-step-step-guide/<br>https://www.thebalance.com/real-estate-investing-101-357985<br>https://img.tineye.com/result/37c50561db0f8d996b2fbd58c0931865f9dc662969d7c7173e02995db4ebafbb?size=160</p>
+    </div>
 
 
   </body>

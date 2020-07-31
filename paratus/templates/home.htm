@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
   </head>
+  
   <body>
+
     <div class="navbar">
+
       <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
       <div class="navbar-right">
         <a class="active" href="{% url 'main:home' %}">Home</a>
@@ -40,6 +43,7 @@
         <a href="{% url 'main:login' %}">Login</a>
         {%endif%}
       </div>
+
     </div>
 
     <!-- TradingView Widget BEGIN -->
@@ -105,10 +109,13 @@
       </script>
     </div>
     <!-- TradingView Widget END -->
+
     {% if request.user.is_authenticated %}
     <h1 style="text-align: center;">Welcome, {{request.user.first_name}}!! </h1>
     {%endif%}
+
     <div class="homepg">
+
       <p style="text-align:center;">
         <img src="{% static "images/logo.png" %}" style="width: 400px;">
       </p>
@@ -121,8 +128,10 @@
         </p>
         {%endif%}
       </div>
+
       <br style="clear: both"/>
       <br>
+
       <div id="mission">
         <h2 style="text-align:center;">Our Mission</h2>
         <p>
@@ -132,7 +141,9 @@
         Paratus is the Latin term for prepared, and our priority here is to provide students with the needed information to be prepared for a lifetime of important financial decisions.
         </p>
       </div>
+
       <br style="clear: both"/>
+
       <div class="container2">
         <h2 style="text-align:center;">Where To Invest</h2>
         <p>
@@ -148,19 +159,25 @@
           <li><strong>Invstr - </strong>Best for educating yourself on investing</li>
         </ul>
         <div style="text-align: center; margin-left: 8px;">
-          <button class="dot" onclick="href = https://www.tdameritrade.com/;">  <img src="{% static "images/ameritrade.png" %}" style="width: 150px;"></button>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
+          <button class="dot" onclick="window.open('https://tdameritrade.com')" value="Open Window"> <img src="{% static "images/ameritrade.png" %}" style="width: 125px;"></button>
+          <button class="dot" onclick="window.open('https://robinhood.com')" value="Open Window"> <img src="{% static "images/robinhood.jpg" %}" style="width: 115px;"></button>
+          <button class="dot" onclick="window.open('https://webull.com')" value="Open Window"> <img src="{% static "images/webull.jpg" %}" style="width: 100px;"></button>
+          <button class="dot" onclick="window.open('https://wealthbase.com')" value="Open Window"> <img src="{% static "images/wealthbase.jpg" %}" style="width: 110px;"></button>
+          <button class="dot" onclick="window.open('https://invstr.com')" value="Open Window"> <img src="{% static "images/invstr.png" %}" style="width: 110px;"></button>
         </div>
       </div>
 
+      <br style="clear: both"/>
 
+      <div class="container" style="background-color: lightgray;">
+        <h2 style="text-align:center;">Disclaimer</h2>
+        <p>
+          Though this program can guide you through the difficulties of managing your finances, it is important to consider your economic situatiion and consult your parents prior to making financial
+          investments or decisions. Here, you can find important information regarding the different components of finance, but outside research and planning should play a role in your finances.
+        </p>
+      </div>
 
     </div>
-
-
 
   </body>
 </html>

@@ -34,15 +34,26 @@
             <a href="{% url 'main:bonds' %}">Bonds</a>
           </div>
         </div>
-        <a href="forum.htm">Forum</a>
+        <a class="active" href="{% url 'main:forum' %}">Forum</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'main:logout' %}">Logout</a>
+        {% else %}
         <a href="{% url 'main:login' %}">Login</a>
+        {%endif%}
       </div>
     </div>
 
+
+
+
+
+
+
+
     <div class="info">
-      <h1 style="text-align:center;">Student Finance</h1>
       <p><a href="#house">Jump to Buying a House</a></p>
       <p><a href="#car">Jump to Buying a Car</a></p>
+      <h1 style="text-align: center;">Student Finance</h1>
       <h2>Paying for College</h2>
       <p>Receiving formal education in a college or university is one of the most rewarding decisions a young person can make, specializing him or her to become an effective member of the workforce in the future. However, college enrollment can be very costly, deterring many from applying, and this can keep students from low-income backgrounds from reaping the benefits of a higher education. If you are a student who is determined to receive a college education, there are many ways to minimize its expenses.</p>
       <ul style="list-style-type:disc">
@@ -55,7 +66,7 @@
         <li><strong>Student loans - </strong>If the previously described options do not cover the costs for a student, taking out student loans is also an option. Federal student loans are a better option than loaning from private lenders, as interest rates will be lower and borrower protections will be better. Subsidized loans with delayed interest are also offered for students in more critical financial situations, but regardless of who the student is, student loans can be difficult to pay off and interest over time can place many students in heavy debt coming out of college.</li>
       </ul>
       <p style="text-align:center;">
-      <img src="{% static "images/payingforcollege.jpg" %}" style="width: 450px; height: 300px;">
+        <img src="{% static "images/payingforcollege.jpg" %}" style="width: 450px; height: 300px;">
       </p>
       <p>A college education is extremely valuable for students in today’s world, and can open up countless opportunities in the future. Unfortunately, economic disparity in this country also makes access to higher education unequal among citizens. However, for students who are driven and determined enough to go to college, these tips can lessen the financial burden.</p>
       <h2 id="house">Buying a House</h2>
@@ -67,7 +78,7 @@
         <li><strong>Find a Real Estate Agent and Start Searching: </strong>Make sure you find a real estate agent who is acting in your best interest and putting in honest effort to find the best possible home for you. Make sure they are willing to bargain in order to find a price in your range. During your search for a house, make sure you stay within budget, but do not settle for a house which does not meet your desired features. Make sure you are making a good investment, meaning the value of the house has potential to go up with incoming commercial and growing properties nearby. Make sure you stick to your individual priorities, whether it be education or location, and make sure to do thorough research before making a decision.</li>
         <li><strong>Payments: </strong>Make sure that once you find the house you want, you get it appraised by the lenders. This will give you an estimate for an adequate house price and will allow you to close on an agreed price. You will then make the down payment of an agreed percentage, pay the external fees, and then periodic payments. There will be property taxes on top of these monthly prices that you must account for.</li>
         <p style="text-align:center;">
-        <img src="{% static "images/payingforhouse.png" %}" style="width: 350px; height: 300px;">
+          <img src="{% static "images/payingforhouse.png" %}" style="width: 350px; height: 300px;">
         </p>
       </ul>
       <h3>What about Renting?</h3>
@@ -78,15 +89,20 @@
       <p>When buying a car there are many options. If your financial situation permits, then cash can be the best option. However we will now take a look at the more complicated and financially safe options that don’t require an immediate and large expense. Leasing a car is “renting” the car for a certain period of time at a specific rate for a time period. Before you finance or lease a car, look at your financial situation to make sure you have enough income to cover your monthly living expenses. Should you take on a new monthly payment? Finance or lease a car only when you can afford to take on a new payment. Saving for a down payment or trading in a car can reduce the amount you need to finance or lease, which then lowers your financing or leasing costs. </p>
       <h3>Trade-in Vehicle</h3>
       <p>Do you have a trade-in? In some cases, your trade-in will take care of the down payment on your new car. But if you still owe money on your car, trading it in might not help much. If you owe more than the car is worth, that’s called negative equity, which can affect the financing of your new car or the lease agreement. So, check “Auto Trade-ins and Negative Equity” before you do. And consider paying down the debt before you buy or lease another car. If you do use the car for a trade-in, ask how the negative equity affects your new financing or lease agreement. For example, it may increase the length of your financing agreement or the amount of your monthly payment.</p>
-      <h3>Should You Use Financing To Buy a Car?</h3>
+      <h3>Should  You Use Financing To Buy a Car?</h3>
       <p>Know Your Financing Options as this is the most complex of the 3 methods and will be discussed below. You have two financing options: direct lending or dealership financing.</p>
       <ul style="list-style-type:disc">
         <li><strong>Direct Lending - </strong>You might borrow money directly from a bank, finance company, or credit union. In your loan, you agree to pay the amount financed, plus a finance charge, over a period of time. Once you’re ready to buy a car from a dealer, you use this loan to pay for the car. If you chose to finance your car this way, you get to shop around and ask several lenders about their credit terms even before you decide to buy a specific car.
         Get your credit terms in advance. By getting pre approved for financing before you shop for a car, you can know the terms in advance, including the annual percentage rate, length of term, and maximum amount. Take this information to the dealer to improve your ability to negotiate.</li>
         <li><strong>Dealership Financing - </strong>You might apply for financing through the dealership. You and a dealer enter into a contract where you buy a car and also agree to pay, over a period of time, the amount financed plus a finance charge. The dealer typically sells the contract to a bank, finance company or credit union that services the account and collects your payments. Dealers offer cars and financing in one place and may have extended hours, like evenings and weekends. They also have multiple financing options. The dealer’s relationships with a variety of banks and finance companies may mean it can offer you a range of financing choices. Special programs are also incorporated. Dealers sometimes offer manufacturer-sponsored, low-rate or incentive programs to buyers. The programs may be limited to certain cars or may have special requirements, like a larger down payment or shorter contract length (36 or 48 months).</li>
       </ul>
+      <p style="text-align:center;">
+      <img src="{% static "images/payingforcar.png" %}" style="width: 450px; height: 300px;">
+      </p>
       <h3>Shop for the Best Financing Deal</h3>
       <p>Before you finance a car, shop around and compare the financing terms offered by more than one creditor. You are shopping for two products: the financing and the car. Negotiate the terms and consider several offers. Comparison shop to find both the car and the finance terms that best suit your needs. Take the time to know and understand the terms, conditions, and costs to finance a car before you sign a contract.</p>
+      <hr>
+      <p style="font-size:12px;"><Strong>Sources</strong><br>https://money.cnn.com/2017/04/25/pf/college/pay-for-college/index.htm<br>https://www.daveramsey.com/blog/how-to-buy-a-house<br>https://www.consumer.ftc.gov/articles/0056-financing-or-leasing-car<br>https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/graduate_salary.jpg?itok=kaVxIrDJ<br>https://images.squarespace-cdn.com/content/5b9bed152714e5c46763d6bf/1539795718222-CANNMN8NRP0B5WVUJAKE/HiRes1-e1437077215392.jpg?content-type=image%2Fjpeg<br>https://www.outliermodel.com/wp-content/uploads/2017/01/5-Things-I%E2%80%99m-Giving-Up-to-Become-Debt-Free-15.jpg</p>
     </div>
 
 

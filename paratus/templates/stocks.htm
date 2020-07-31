@@ -34,8 +34,12 @@
             <a href="{% url 'main:bonds' %}">Bonds</a>
           </div>
         </div>
-        <a href="forum.htm">Forum</a>
+        <a class="active" href="{% url 'main:forum' %}">Forum</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'main:logout' %}">Logout</a>
+        {% else %}
         <a href="{% url 'main:login' %}">Login</a>
+        {%endif%}
       </div>
     </div>
 
@@ -51,7 +55,7 @@
         <li>If volume is up but price is down, it means more investors are looking to sell.</li>
       </ul>
       <p style="text-align:center;">
-        <img src="{% static "images/stocksimage.jpg" %}" style="width: 600px; height: 400px;">
+      <img src="{% static "images/stocksimage.jpg" %}" style="width: 600px; height: 400px;">
       </p>
       <h2>Getting Started</h2>
       <p>Stocks fluctuate when a company has positive, negative or neutral associations. In the end, the stock price is based on public opinion of a company and its future as this ultimately determines how much of a stock is bought or sold. These can include all types of things such as their revenue reports and how much money they have made or any good news or bad news about the company. With the economy slowly growing at a steady rate, investing in stocks allows for a steady increase in your investment. Below is the method by which you can begin investing as a teen or at a young age:</p>
@@ -65,6 +69,10 @@
         <li>Diversify your portfolio with different sectors of stocks such as information technology, ETFs, services or manufacturers.</li>
       </ul>
       <p>Overall, if you are able to begin gradually and develop a thorough process of reasoning when making investments then you will be more likely to stay in it for the long run. Starting at a young age with early investment while following these guidelines will surely make the future more financially comfortable for you as many have experienced and emphasize now.</p>
+      <p style="text-align:center;">
+      <img src="{% static "images/stockscovidimage.png" %}" style="width: 600px; height: 400px;">
+      </p>
+    </div>
 
       <!-- TradingView Widget BEGIN -->
       <div class="tradingview-widget-container">
@@ -124,7 +132,11 @@
         Video courtesy of
         <a href="https://www.youtube.com/watch?v=dFAiChOmoGI" target="_blank">Stock Market For Beginners 2020</a>.
       </p>
-  </div>
+
+      <div class="info">
+        <hr>
+        <p style="font-size:12px;"><Strong>Sources</strong><br>https://investorjunkie.com/investing/how-to-get-into-stocks/<br>https://www.bioworld.com/ext/resources/Stock-images/Money/stock-prices-up.png?1588794938<br>https://www.youtube.com/watch?v=dFAiChOmoGI</p>
+      </div>
 
 
   </body>

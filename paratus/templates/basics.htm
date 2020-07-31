@@ -34,8 +34,12 @@
             <a href="{% url 'main:bonds' %}">Bonds</a>
           </div>
         </div>
-        <a href="forum.htm">Forum</a>
+        <a href="{% url 'main:forum' %}">Forum</a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'main:logout' %}">Logout</a>
+        {% else %}
         <a href="{% url 'main:login' %}">Login</a>
+        {%endif%}
       </div>
     </div>
 
@@ -44,16 +48,29 @@
      <p style="text-align:center;">
        <img src="{% static "images/basicspic.png" %}" style="width: 850px;">
      </p>
-     <p style="text-align:center;">
-       <img src="{% static "images/basicsinfo.png" %}" style="width: 850px; height: 300px;">
-     </p>
+
+     <div class="container2">
+       <h1>The 4 Essentials to a Life of Fincancial Readiness</h1>
+       <p>
+         As you become an adult, you will be faced with important financial decisions. Here, we provide you
+         with the essentual information needed for you to understand what these decisions means and how to
+         handle them. The following categories provide the basics of finance that you need to know:
+       </p>
+     </div>
+
    </div>
+
    <a href="{% url 'main:taxes' %}">
-     <p style="text-align:center;">
-       <img src="{% static "images/basicstaxes.png" %}" style="width: 600px; height: 250px;">
-     </p>
+     <div class="container">
+       <img src="{% static "images/taxes.jpg" %}" style="width: 300px;  float: right;">
+       <p style="text-align:center;">
+         CLICK HERE TO LEARN ABOUT TAXES
+       </p>
+     </div>
    </a>
+
    <br>
+
    <a href="{% url 'main:credit' %}">
      <p style="text-align:center;">
        <img src="{% static "images/basicscreditscore.png" %}" style="width: 600px; height: 250px;">
