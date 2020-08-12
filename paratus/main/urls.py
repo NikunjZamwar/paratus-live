@@ -34,6 +34,7 @@ urlpatterns = [
     path("bonds",  views.bonds, name="bonds"),
     path("forum",  views.forum, name="forum"),
     path("comment/<int:id>", views.forum, name="comment"),
+    path("comments/<int:id>", views.forum, name="comments"),
     path("signup", views.SignupView.as_view(), name='signup'),
     path("logout", views.logout_user, name='logout'),
     path("login", views.LoginView.as_view(), name='login'),

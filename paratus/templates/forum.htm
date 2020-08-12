@@ -74,11 +74,19 @@
             </div>
             <br>
           </div>
-          <button class ="collapsible">Comments</button>
-          <div class="content">
-            <br>
-            <p>Comment</p>
-          </div>
+            <form method="GET" action="{% url 'main:comments' id=post.id %}" name="comments">
+              <button class ="collapsible">Comments</button>
+              <div class="content">
+                <br>
+                <p>Comment</p>
+                {% for c in comments %}
+                  <strong><p>{{c.paratus_user.first_name}}</p></strong>
+                  <p>{{c.comment}}</p>
+                  <p style="text-align: right; font-size: 10px;">{{comment.created_at}}</p>
+                {% endfor %}
+              </div>
+            </form>
+
 
           <script src="{% static "js/forum.js" %}"></script>
 
