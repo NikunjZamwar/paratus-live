@@ -197,11 +197,6 @@ button {
   background-color: #3399ff;
 }
 
-/* .active .collapsible{
-    background-color: #3399ff;
-    color: white;
-} */
-
 .content {
   display: none;
   overflow: hidden;

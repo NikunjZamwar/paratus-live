@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
-
   </head>
+
   <body>
     <div class="navbar">
       <a href="{% url 'main:home' %}" id="logo"><img src="{% static "images/logo.png" %}" width= "200px"></a>
@@ -62,7 +62,7 @@
           <strong><p>{{post.paratus_user.first_name}}</p></strong>
           <p>{{post.paratus_message}}</p>
           <p style="text-align: right; font-size: 10px;">{{post.created_at}}</p>
-          <button type="button" class = "collapsible">Reply</button>
+          <button type="button" class ="collapsible">Reply</button>
           <div class="content">
             <br>
             <div class="container">
@@ -74,25 +74,27 @@
             </div>
             <br>
           </div>
-            <form method="GET" action="{% url 'main:comments' id=post.id %}" name="comments">
-              <button class ="collapsible">Comments</button>
-              <div class="content">
+            <button class ="collapsible">Comments</button>
+            <div class="content">
+              {% for c in post.comments.all %}
                 <br>
-                <p>Comment</p>
-                {% for c in comments %}
+                <div class="container">
                   <strong><p>{{c.paratus_user.first_name}}</p></strong>
                   <p>{{c.comment}}</p>
-                  <p style="text-align: right; font-size: 10px;">{{comment.created_at}}</p>
-                {% endfor %}
-              </div>
-            </form>
-
-
-          <script src="{% static "js/forum.js" %}"></script>
-
+                  <p style="text-align: right; font-size: 10px;">{{c.created_at}}</p>
+                </div>
+              {% empty %}
+                <br>
+                <div class="container">
+                  <p>No Comments</p>
+                </div>
+              {% endfor %}
+            </div>
         </div>
         <br>
       {% endfor %}
+
+      <script src="{% static "js/forum.js" %}"></script>
 
   {% else %}
     <h1 style="text-align: center;">To access the feature you need to login. Please Login</h1>

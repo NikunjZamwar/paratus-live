@@ -98,51 +98,12 @@ def forum(request, id=None):
             comment.paratus_user = request.user
             comment.paratus_post = ParatusPost.objects.get(id=id)
             comment.save()
-    elif request.method == 'GET' and 'comments' in request.GET:
-        print("Helloosdfnlasdd")
-        # post_id = ParatusPost.objects.get(id=id)
-        comments = ParatusComment.objects.filter(paratus_post = id)
-        print(comments)
 
     pform = forms.PostForm()
     cform = forms.CommentForm()
     context = {
                "pform": pform,
                "cform": cform,
-               "posts": ParatusPost.objects.all,
-               "comments": comments,
+               "posts": ParatusPost.objects.order_by('-created_at'),
                }
     return render(request, 'forum.htm', context)
-
-
-    # if request.method == 'POST':
-    #     if 'post' in request.POST:
-    #         pform = forms.PostForm(request.POST)
-    #         if pform.is_valid():
-    #             post = pform.save(commit=False)
-    #             post.paratus_user = request.user
-    #             post.save()
-    #     elif 'comment' in request.POST:
-    #         cform = forms.CommentForm(request.POST)
-    #         if cform.is_valid():
-    #             comment = cform.save(commit=False)
-    #             # comment.paratus_user = request.user
-    #             # comment.paratus_post = request.post.get("id")
-    #             # comment.save()
-    # pform = forms.PostForm()
-    # cform = forms.CommentForm()
-    # context = {
-    #             "pform": pform,
-    #             "cform": cform,
-    #             "posts": ParatusPost.objects.all,
-    #             }
-
-
-
-
-
-    # post = form.cleaned_data
-    # post.save()
-
-
-    # return render(request, 'forum.htm', context)

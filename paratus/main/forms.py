@@ -2,12 +2,6 @@ from django import forms
 from .models import *
 
 class SignUpForm(forms.ModelForm):
-    # class Meta:
-    #     model = ParatusUser
-    #     fields = ['name', 'email', 'password']
-    #     widgets = {
-    #             'password': forms.PasswordInput(),
-    #     }
     class Meta:
         model = ParatusUser
         fields = ('first_name','last_name', 'email', 'password',)
