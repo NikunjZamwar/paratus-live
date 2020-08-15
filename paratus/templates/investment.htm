@@ -45,6 +45,24 @@
 
   <div class="info">
     <h1 style="text-align: center;">Investment</h1>
+
+    <p style="text-align:center;">
+      <img src="{% static "images/investment.png" %}" style="width: 850px;">
+    </p>
+
+    <div class="container2">
+      <h1>The Essential Guide to Smart Investment</h1>
+      <p>
+        There are three main types of investment. They each have their own unique attributes and advantages, and you can
+        learn about each one by clicking below.
+      </p>
+      <ul style="list-style-type:disc">
+        <li><a style="color: white;" href="{% url 'main:stocks' %}">Stocks</a></li>
+        <li><a style="color: white;" href="{% url 'main:property' %}">Property</a></li>
+        <li><a style="color: white;" href="{% url 'main:bonds' %}">Bonds</a></li>
+      </ul>
+    </div>
+
   </div>
 
 

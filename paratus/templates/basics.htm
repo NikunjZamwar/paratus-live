@@ -56,38 +56,15 @@
          with the essentual information needed for you to understand what these decisions means and how to
          handle them. The following categories provide the basics of finance that you need to know:
        </p>
+       <ul style="list-style-type:disc">
+         <li><a style="color: white;" href="{% url 'main:taxes' %}">Taxes</a></li>
+         <li><a style="color: white;" href="{% url 'main:credit' %}">Credit Score</a></li>
+         <li><a style="color: white;" href="{% url 'main:retirement' %}">Retirement</a></li>
+         <li><a style="color: white;" href="{% url 'main:student' %}">Student Finance</a></li>
+       </ul>
      </div>
 
    </div>
-
-   <a href="{% url 'main:taxes' %}">
-     <div class="container3">
-       <img src="{% static "images/taxes.jpg" %}" style="width: 300px;  float: right;">
-       <p style="text-align:center;">
-         CLICK HERE TO LEARN ABOUT TAXES
-       </p>
-     </div>
-   </a>
-
-   <br>
-
-   <a href="{% url 'main:credit' %}">
-     <p style="text-align:center;">
-       <img src="{% static "images/basicscreditscore.png" %}" style="width: 600px; height: 250px;">
-     </p>
-   </a>
-   <br>
-   <a href="{% url 'main:retirement' %}">
-     <p style="text-align:center;">
-       <img src="{% static "images/basicsretirement.png" %}" style="width: 600px; height: 250px;">
-     </p>
-   </a>
-   <br>
-   <a href="{% url 'main:student' %}">
-     <p style="text-align:center;">
-       <img src="{% static "images/basicsstudentfinance.png" %}" style="width: 600px; height: 250px;">
-     </p>
-   </a>
 
   </body>
 </html>

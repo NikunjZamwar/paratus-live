@@ -5,6 +5,7 @@ class SignUpForm(forms.ModelForm):
     class Meta:
         model = ParatusUser
         fields = ('first_name','last_name', 'email', 'password',)
+        widgets = {'password': forms.PasswordInput(), }
 
 class LoginForm(forms.Form):
     email = forms.EmailField()

@@ -34,7 +34,7 @@
             <a href="{% url 'main:bonds' %}">Bonds</a>
           </div>
         </div>
-        <a class="active" href="{% url 'main:forum' %}">Forum</a>
+        <a href="{% url 'main:forum' %}">Forum</a>
         {% if request.user.is_authenticated %}
         <a href="{% url 'main:logout' %}">Logout</a>
         {% else %}
@@ -68,9 +68,9 @@
         <li>Begin to invest in individual stocks gradually and rather focus on researching the company thoroughly.</li>
         <li>Diversify your portfolio with different sectors of stocks such as information technology, ETFs, services or manufacturers.</li>
       </ul>
-      <p>Overall, if you are able to begin gradually and develop a thorough process of reasoning when making investments then you will be more likely to stay in it for the long run. Starting at a young age with early investment while following these guidelines will surely make the future more financially comfortable for you as many have experienced and emphasize now.</p>
-      <p style="text-align:center;">
-      <img src="{% static "images/stockscovidimage.png" %}" style="width: 600px; height: 400px;">
+      <p>
+        Overall, if you are able to begin gradually and develop a thorough process of reasoning when making investments then you will be more likely to stay in it for the long run. Starting at a young age with early investment while following these guidelines will surely make the future more financially comfortable for you as many have experienced and emphasize now.
+        Below, you will find two graphs of Dow Jones and S&P indices and you can see the impact of COVID-19 as well as other trends in the graph whihc you can analyze by date and see how it has shaped the graph to look today.
       </p>
     </div>
 
