@@ -19,4 +19,4 @@ Due to being relatively new to django we had to use online resources to aid us i
 2. Then in you command prompt you will go to the project folder C:...Paratus\paratus> and run the command :
    python manage.py runserver
    
-3. Copy the localhost link that your command prompt shows you and you will be able to see the website. Preferbly use a incognito window or a new google window to ensure cache and cookies do not interfere with the website.
+3. Copy the localhost link that your command prompt shows you and you will be able to see the website. Preferably use an incognito window or a new google window to ensure cache and cookies do not interfere with the website.
