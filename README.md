@@ -4,7 +4,7 @@ This website has been made to address the need of increasing financial literacy 
 
 Our team was Mani Ganna, Nikunj Zamwar, Rohan Phadke, and Sami Ahmad
 
-We predmoinantly used HTML and CSS for the front end. For the backend of the code we used Django with python. We have one snippet of JavaScript for the collapsible function. 
+We predominantly used HTML and CSS for the front end. For the backend of the code we used Django with python. We have one snippet of JavaScript for the collapsible function. 
 Due to being relatively new to django we had to use online resources to aid us in the process such as, stackoverflow.com, https://docs.djangoproject.com/en/3.1/, https://www.youtube.com/watch?v=p1aC-KwB98o, and https://www.youtube.com/playlist?list=PLQVvvaa0QuDe9nqlirjacLkBYdgc2inh3. For HTML and CSS aid we used w3schools.com and stackoverflow.com.
 
 ## Dependencies
