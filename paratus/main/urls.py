@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 app_name = "main"
 
 urlpatterns = [
-    path("",  views.home, name="home"),
+    path("/",  views.home, name="home"),
     path("basics",  views.basics, name="basics"),
     path("taxes",  views.taxes, name="taxes"),
     path("credit",  views.credit, name="credit"),
