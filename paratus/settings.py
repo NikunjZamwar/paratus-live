@@ -24,7 +24,7 @@ SECRET_KEY = '0552ho66(l)l(db2!1n+(91f2q7v*z9$j^cf)y&wj=+rnoi3hf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['paratusedu.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['paratusedu.herokuapp.com', '127.0.0.1', 'paratusedu.com']
 
 
 # Application definition
