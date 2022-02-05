@@ -19,4 +19,4 @@ Due to being relatively new to django I had to use online resources to aid me in
    
 3. Copy the localhost link that your command prompt shows you and you will be able to see the website. Preferably use an incognito window or a new google window to ensure cache and cookies do not interfere with the website.
 
-Note: You can also visit the deployed website paratusedu.com.
+Note: You can also visit the deployed website at: paratusedu.com.
